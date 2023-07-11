@@ -156,7 +156,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
                 <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image"> -->
-                <img src="/storage/{{Auth()->user()->huella}}" class="user-image" alt="User Image">
+                <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{!!auth()->user()->apepersona.' '.auth()->user()->nompersona!!}</span>
               </a>
@@ -164,7 +164,7 @@
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image"> -->
-                  <img src="/storage/{{Auth()->user()->huella}}" class="img-circle" alt="User Image">
+                  <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="img-circle" alt="User Image">
                   <p>
                     {!! auth()->user()->abreviatura.' '.auth()->user()->apepersona.' '.auth()->user()->nompersona !!}
                   </p>
@@ -200,7 +200,7 @@
         <div class="user-panel">
           <div class="pull-left image">
             <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image">-->
-            <img src="/storage/{{Auth()->user()->huella}}" class="img-circle" alt="User Image" style="height: 50px; width: 50px;">
+            <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="img-circle" alt="User Image" style="height: 50px; width: 50px;">
           </div>
           <div class="pull-left info">
             <p>{{ auth()->user()->apepersona }}<br> {{auth()->user()->nompersona}}</p>
@@ -240,15 +240,15 @@
           </ul>
           </li>
           @yield('activeMenuReportes')
-          <a href="#"><i class="fa fa-file-text"></i> <span>Reportes</span>
+          <a href="#"><i class="fa fa-calendar"></i> <span>Horarios</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            @yield('activeListadoEstudiantes')<a href="{{route('ListaDeAlumnosDocente')}}">Listado de Estudiantes</a></li>
+ 
             @yield('activeHorarioClases')<a href="{{route('HorarioClasesEstudiantesDocente')}}">Horarios de Clases</a></li>
-            @yield('activeReporteFinalAsistencia')<a href="{{route('DocenteReporteDeAsistenciaMateria')}}">Reporte final de asistencia</a></li>
+
 
             </ul>
           </li>
