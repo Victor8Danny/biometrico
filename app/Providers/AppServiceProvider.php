@@ -21,13 +21,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        //Schema::defaultStringLength(191);
+        Schema::defaultStringLength(191);
         //Schema::enableForeignKeyConstraints();
-        DB::listen(function ($query) {
-            // $query->sql
-            // $query->bindings
-            // $query->time
-        });
+       
         
     }
 }
