@@ -47,41 +47,41 @@ class LoginController extends Controller
         return 'cedpersona';
 
     }
+    
     public function validateLogin(Request $request)
     {
         $request->validate([
             $this->username() => 'required',
             'password' => 'required',
         ]);
-   
-        //$credentials = $request->only('cedpersona', 'clave');
-
-        //$user = User::where('cedpersona', $request->cedpersona)->first();
-        //vale
+        //
         $usuario = User::where('cedpersona', $request->cedpersona)->first();
-        //echo $usuario->cedpersona;
+
         $a = 0;
         $a = $usuario->cedpersona;
-        //if($a != 0){
+      
             if($usuario != null){
-            if($usuario->clave === $request->password){
-                Auth::login($usuario);
-                $request->session()->regenerate();
-                return redirect()->intended('dashboard')
-                            ->withSuccess('Signed in');
-            }
-            /* vale
-            if($usuario->clave === $request->password){
-                Auth::login($usuario);
-                $request->session()->regenerate();
-                return redirect()->intended('dashboard')
-                            ->withSuccess('Signed in');
-            }
-            */
-            /*if (Auth::attempt($credentials)) {
-                return redirect()->intended('dashboard')
-                            ->withSuccess('Signed in');
-            }*/
+                switch($usuario->tippersona){
+
+                    case('Estudiante'):
+                        if($usuario->clave === $request->password){
+                            Auth::login($usuario);
+                            $request->session()->regenerate();
+                            return redirect()->intended('dashboard')
+                                        ->withSuccess('Signed in');
+                        }
+                    break;	
+                    case ('Docente'):
+                        if($usuario->clave === $request->password){
+                            Auth::login($usuario);
+                            $request->session()->regenerate();
+                            return redirect()->intended('dashboard')
+                                        ->withSuccess('Signed in');
+                        }
+                    break;
+
+                }
+
         }
         
   
