@@ -12,10 +12,7 @@ use App\Models\Horario;
 use App\Models\DocenteMateria;
 use App\Models\Docente;
 use App\Models\Administrador;
-
-
-
-
+use App\Models\Foto;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -35,6 +32,15 @@ class EstudianteController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
+            $foto = Foto::where('codpersona', '=', $id)->get();
+            if (count($foto) < 1){
+                //return response()->json($foto);
+                $foto= new Foto();
+                $foto->codpersona = $id;
+                $foto->nomfoto = 'default.png';
+                $foto->save();
+            }
         return view('estudiante/estudiantePrincipal');
     }
     public function EstudianteInformacion()
