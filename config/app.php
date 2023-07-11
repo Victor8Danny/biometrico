@@ -211,8 +211,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'DB' => Illuminate\Support\Facades\DB::class,
-        'Schema' => Illuminate\Support\Facades\Schema::class,
+        //'DB' => Illuminate\Support\Facades\DB::class,
+       // 'Schema' => Illuminate\Support\Facades\Schema::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
