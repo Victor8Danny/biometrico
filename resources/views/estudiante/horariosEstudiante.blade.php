@@ -48,7 +48,7 @@
                 <tr>
                     <th >FASE</th>
                     <th style="text-align: center;">VER</th>
-                    <th style="text-align: center;">IMPRIMIR</th>
+           
                 </tr>
             </thead>
                 <tbody>
@@ -59,7 +59,7 @@
 
                         <td>{{$porcentaje['nomfase']}}</td>
                         <td style="text-align: center;"><button type="button" id="abrir" name="abrir" class="btn btn-default btn-bg glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#modalVerCalificaciones" onclick="agregaform( {{$porcentaje->codfase}} )"></button></td>
-                        <td style="text-align: center;"><a href="horarioClasesEstudiantepdf/{{$porcentaje->codfase}}"><button type="button" class="btn btn-default btn-sm" onclick="ver()"><span class="glyphicon glyphicon-print"></span></button></a></td>
+                        
                     </tr>
  
                 @endforeach
