@@ -147,15 +147,7 @@
                 <input type="text" class="form-control" value="{{ $inf -> codparalelo}}" name="codparalelo" disabled>
               </div>
 
-              <div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
-                <label for="exampleInputFile">Subir una Foto</label>
-                <input type="file" name="foto">
-                @if ($errors->has('foto'))
-                <span class="help-block">
-                  <strong>{{ $errors->first('foto') }}</strong>
-                </span>
-                @endif
-              </div>
+
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Actualizar</button>
