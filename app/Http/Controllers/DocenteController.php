@@ -63,8 +63,7 @@ class DocenteController extends Controller
                 'convencional' => 'required|string|max:10',
                 'celular' => 'required|string|max:10',
                 'email' => 'required|email', Rule::unique('tpersona')->ignore($id),
-                'estado_civil' => 'required',
-                'foto' => 'mimes:jpg,jpeg,png'
+                'estado_civil' => 'required'
             ]);
 
             if ($v->fails()) {
@@ -77,14 +76,7 @@ class DocenteController extends Controller
                 $informacionPersonal->telcelularpersona = $request->celular;
                 $informacionPersonal->corpersona = $request->email;
                 $foto = $request->foto;
-                if (!is_null($foto)) {
-                    $extension = $request->file('foto')->getClientOriginalExtension();
-                    $file_name = bcrypt($id) . '.' . $extension;
-                    //$request->file('foto')->storeAs('public', $file_name);
-                    //$request->file('foto')->move(public_path('foto',$file_name));
-                    $request->file('foto')->move('storage', $file_name);
-                    $informacionPersonal->huella = $file_name;
-                }
+   
                 $informacionPersonal->save();
 
                 $informacionPersonal = Docente::where('tdocente.codpersona', $id)->first();
@@ -105,26 +97,10 @@ class DocenteController extends Controller
             $codPersona = Auth::id();
             $horaActual=DB::select("SELECT to_char(current_timestamp, 'HH12:MI:SS') as fecha");
             $fechaActual=DB::select("select current_date as fecha");
-            //$fecha= $fechaActual[0]->fecha;
+            
             $fecha='2023-01-20';
             $ultimoPeriodo = Periodo::UltimoPeriodoPrueba();
-           /* $Estudiantes = DB::table('tperiodo')
-                ->join('tperiodoseccion', 'tperiodo.codperiodo', '=', 'tperiodoseccion.codperiodo')
-                ->join('thorarioperiodoseccion', 'tperiodoseccion.codperiodoseccion', '=', 'thorarioperiodoseccion.codperiodoseccion')
-                ->join('thorahorario', 'thorahorario.codhorarioperiodoseccion', '=', 'thorarioperiodoseccion.codhorarioperiodoseccion')
-                ->join('thora', 'thorahorario.codhorahorario', '=', 'thora.codhorahorario')
-                ->join('tasistencia', 'tasistencia.codhora', '=', 'thora.codhora')
-                ->join('tmateria', 'tasistencia.codmateria', '=', 'tmateria.codmateria')
-                ->join('tdocentemateria', 'tmateria.codmateria', '=', 'tdocentemateria.codmateria')
-                ->join('tpersona', 'tasistencia.codpersona', '=', 'tpersona.codpersona')
-                ->select('tpersona.cedpersona', 'tpersona.apepersona', 'tpersona.nompersona', 'tasistencia.estasistencia')
-                ->where('tperiodo.codperiodo', '=', $ultimoPeriodo)
-                ->where('thorahorario.inihorahorario', '<=', $horaActual)
-                ->where('thorahorario.finhorahorario', '>=', $horaActual)
-                ->where('tasistencia.fecha', '=', $fechaActual)
-                ->where('tdocentemateria.codpersona', '=', 934)
-                ->distinct()->orderby('tpersona.apepersona', 'ASC')
-                ->get();*/
+
 
                 $codMateria = DB::table('tdocentemateria')
                 ->join('tperiodoseccionparalelo', 'tdocentemateria.codperiodoseccionparalelo', '=', 'tperiodoseccionparalelo.codperiodoseccionparalelo')
@@ -698,17 +674,7 @@ class DocenteController extends Controller
             ->distinct()->orderby('tfase.codfase', 'ASC')
             ->get();
 
-           /* $listaFases = DB::table('tseccion')
-            ->join('tperiodoseccion', 'tseccion.codseccion', '=', 'tperiodoseccion.codseccion')
-            ->join('tperiodoseccionparalelo', 'tperiodoseccion.codperiodoseccion', '=', 'tperiodoseccionparalelo.codperiodoseccion')
-            ->join('tdocentemateria', 'tperiodoseccionparalelo.codperiodoseccionparalelo', '=', 'tdocentemateria.codperiodoseccionparalelo')
-            ->join('tfasemateria', 'tdocentemateria.codmateria', '=', 'tfasemateria.codmateria')
-            ->join('tfase', 'tfasemateria.codfase', '=', 'tfase.codfase')
-            ->select('tseccion.nomseccion','tperiodoseccionparalelo.codparalelo','tfase.nomfase','tfase.codfase','tfasemateria.codmateria')
-            ->where('tdocentemateria.codpersona', '=', $codPersona)
-            ->where('tperiodoseccion.codperiodo', '=', $ultimoPeriodo)
-            ->distinct()->orderby('tfase.codfase', 'ASC')
-            ->get();*/
+            
             if (!is_null($informacionPersonal)) {
                 return view('docente/horariosDocente', compact('informacionPersonal','listaFases','ultimoPeriodo'));
             } else {
