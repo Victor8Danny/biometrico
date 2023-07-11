@@ -206,8 +206,7 @@
                     
                 }
 
-                $('#box-footer').empty();
-                $('#box-footer').append("<br><a href='asistenciaPorDiapdf/"+{{$ultimoPeriodo}}+"/"+codseccion+"/"+codparalelo+"/"+codmateria+"/"+fecha+"'><button type='button' class='btn btn-primary' onclick='ver()'>Imprimir</button></a>");
+                
             });           
         });
         
