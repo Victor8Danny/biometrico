@@ -158,9 +158,7 @@
                     var pocentaje = data[i].por.toFixed(2);
                     $('#tabledata').append("<tbody><tr><th>"+cont+"</th><th>"+data[i].apepersona+" "+data[i].nompersona+"</th><th style='text-align: center;'>"+data[i].contadorJustificado1+"</th><th style='text-align: center;'>"+data[i].contadorAusente1+"</th><th style='text-align: center;'>"+data[i].contadorAtrazo1+"</th><th style='text-align: center;'>"+data[i].contadorPresente1+"</th><th style='text-align: right;'>"+pocentaje+"%  </th><tbody>"); 
                 }
-                $('#box-footer').empty();
-                $('#box-footer').append("<br><a href='asistenciaPorcentajeCursopdf/"+{{$ultimoPeriodo}}+"/"+codseccion+"/"+codparalelo+"/"+codmateria+"'><button type='button' class='btn btn-primary' onclick='ver()'>Imprimir</button></a>");
-                
+               
             });             
         });
 
