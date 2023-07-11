@@ -6,9 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Models\Foto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Notifications\ResetPassword;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -38,5 +39,11 @@ class User extends Authenticatable
         'clave',
         //'remember_token',
     ];
+
+    public static function datosFoto() 
+    {
+        $id = Auth::id();
+        return Foto::where('codpersona', '=', $id)->first();
+    }
 
 }
