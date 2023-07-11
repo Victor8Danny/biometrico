@@ -263,8 +263,7 @@
                     tabla.appendChild(tblhead);
 
                     tabledata.appendChild(tabla);
-                    $('#box-footer').empty();
-                    $('#box-footer').append("<br><a href='asistenciaEntreFechaspdf/"+{{$ultimoPeriodo}}+"/"+codseccion+"/"+codparalelo+"/"+codmateria+"/"+fechaInicio+"/"+fechaFin+"'><button type='button' class='btn btn-primary' onclick='ver()'>Imprimir</button></a>");               
+                                
             });
         } 
 
