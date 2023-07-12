@@ -67,16 +67,14 @@ class LoginController extends Controller
                         if($usuario->clave === $request->password){
                             Auth::login($usuario);
                             $request->session()->regenerate();
-                            return redirect()->intended('dashboard')
-                                        ->withSuccess('Signed in');
+                            return redirect('/')->withSuccess('Signed in');
                         }
                     break;
                     case ('Docente'):
                         if($usuario->clave === $request->password){
                             Auth::login($usuario);
-                $request->session()->regenerate();
-                return redirect()->intended('dashboard')
-                            ->withSuccess('Signed in');
+                            $request->session()->regenerate();
+                            return redirect('/')->withSuccess('Signed in');
                         }
                     break;
 
