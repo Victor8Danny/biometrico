@@ -26,11 +26,11 @@
 
 
 
-  
-  
 
 
-   
+
+
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 
@@ -56,7 +56,7 @@
       -o-transition: all 1s ease;
       transition: all 1s ease;
       z-index: 10000;
-    }   
+    }
 
     #contenedor_carga_ajax {
       background-color: rgba(0, 0, 0, 0.473);
@@ -177,7 +177,8 @@
 
               <div class="pull-right">
                 <form method="POST" action="{{route('logout')}}">
-                  {{ csrf_field() }}
+
+                  @csrf
                   <button class="btn btn-default btn-flat">Cerrar Sesión </button>
                 </form>
               </div>
@@ -235,7 +236,7 @@
           </a>
           <ul class="treeview-menu">
             @yield('activeListaJustificaciones')<a href="{{route('ListaJustificacionesDocente')}}">Lista de justificaciones</a></li>
-           
+
 
           </ul>
           </li>
@@ -246,7 +247,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
- 
+
             @yield('activeHorarioClases')<a href="{{route('HorarioClasesEstudiantesDocente')}}">Horarios de Clases</a></li>
 
 
@@ -304,7 +305,7 @@
           </script>.
         </div>
       </center>
-        
+
       </div>
     </footer>
 
@@ -322,9 +323,9 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
-    
 
- 
+
+
     <script>
 
 
@@ -355,10 +356,10 @@
                     $('#alert').html("Los promedios se actualizaron correctamente");
                     setTimeout(function() {
                         $('#alert').hide(450);
-                    }, 7000);                    
+                    }, 7000);
                 },
                 error: function(error, textStatus, thrownError) {
-                    $("#contenedor_carga_ajax").hide();                    
+                    $("#contenedor_carga_ajax").hide();
                 }
             });
         });
