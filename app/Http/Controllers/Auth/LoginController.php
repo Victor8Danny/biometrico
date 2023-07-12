@@ -60,7 +60,7 @@ class LoginController extends Controller
         $a = 0;
         $a = $usuario->cedpersona;
 
-            if($usuario != null){
+        if($usuario != null){
                 switch($usuario->tippersona){
 
                     case('Estudiante'):
@@ -80,10 +80,29 @@ class LoginController extends Controller
 
                 }
 
+        }else{
+            switch($usuario->tippersona){
+
+                case('Estudiante'):
+                    if($usuario->clave === $request->password){
+                        Auth::login($usuario);
+                        $request->session()->regenerate();
+                        return redirect('/')->withSuccess('Signed in');
+                    }
+                break;
+                case ('Docente'):
+                    if($usuario->clave === $request->password){
+                        Auth::login($usuario);
+                        $request->session()->regenerate();
+                        return redirect('/')->withSuccess('Signed in');
+                    }
+                break;
+
+            }
         }
 
 
-        return redirect("login")->withSuccess('Login details are not valid');
+        //return redirect("login")->withSuccess('Login details are not valid');
     }
 
 
