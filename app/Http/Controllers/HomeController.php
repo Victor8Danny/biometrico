@@ -32,13 +32,13 @@ class HomeController extends Controller
             break;
 			case('Estudiante'):
                 return redirect('estudiante/estudiantePrincipal');// si es un usuario normal redirige a la ruta USER
-			break;	
+			break;
             case ('Docente'):
                 return redirect('docente/docentePrincipal');//si es administrador redirige al moderador
             break;
             case('Supervisor'):
                 return redirect('supervisor');/// si es un director redirige a la ruta director
-			break;	
+			break;
         }
         /*
         if ($User->tippersona === "Administrativo") {
@@ -56,7 +56,7 @@ class HomeController extends Controller
             return view('construccion');
         }**/
     }
-    
+
     public function AdministradorInformacion()
     {
         if (Auth::check()) {
