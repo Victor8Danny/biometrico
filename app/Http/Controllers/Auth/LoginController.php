@@ -47,7 +47,7 @@ class LoginController extends Controller
         return 'cedpersona';
 
     }
-    
+
     public function validateLogin(Request $request)
     {
         $request->validate([
@@ -59,7 +59,7 @@ class LoginController extends Controller
 
         $a = 0;
         $a = $usuario->cedpersona;
-      
+
             if($usuario != null){
                 switch($usuario->tippersona){
 
@@ -67,15 +67,15 @@ class LoginController extends Controller
                         if($usuario->clave === $request->password){
                             Auth::login($usuario);
                             $request->session()->regenerate();
-                            return redirect()->intended('dashboard')
+                            return redirect()->route($redirectTo)
                                         ->withSuccess('Signed in');
                         }
-                    break;	
+                    break;
                     case ('Docente'):
                         if($usuario->clave === $request->password){
                             Auth::login($usuario);
                             $request->session()->regenerate();
-                            return redirect()->intended('dashboard')
+                            return redirect()->route($redirectTo)
                                         ->withSuccess('Signed in');
                         }
                     break;
@@ -83,11 +83,11 @@ class LoginController extends Controller
                 }
 
         }
-        
-  
+
+
         return redirect("login")->withSuccess('Login details are not valid');
     }
-   
+
 
 
 }
