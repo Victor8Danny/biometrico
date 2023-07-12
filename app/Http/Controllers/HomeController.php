@@ -31,13 +31,13 @@ class HomeController extends Controller
                 return view('administrador/administradorPrincipal');//si es administrador continua al HOME
             break;
 			case('Estudiante'):
-                return redirect('estudiante/estudiantePrincipal');// si es un usuario normal redirige a la ruta USER
+                return view('estudiante/estudiantePrincipal');// si es un usuario normal redirige a la ruta USER
 			break;
             case ('Docente'):
-                return redirect('docente/docentePrincipal');//si es administrador redirige al moderador
+                return view('docente/docentePrincipal');//si es administrador redirige al moderador
             break;
             case('Supervisor'):
-                return redirect('supervisor');/// si es un director redirige a la ruta director
+                return view('supervisor/supervisorPrincipal');/// si es un director redirige a la ruta director
 			break;
         }
         /*
