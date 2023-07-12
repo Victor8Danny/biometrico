@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <!--<meta name="csrf-token" content="{{ csrf_token() }}">-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Sistema de control de asistensias</title>
 
@@ -23,7 +23,7 @@
                 <a class="navbar-brand text-light" href="{{ url('/') }}" style="background-color:#278747;">
                 Sistema de control de asistencias
                 </a>
-                
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -34,16 +34,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        
+
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right" >
                     @auth
                         <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" style="color:#FF0000;">Home</a>
                     @else
-                        
+
 
                     @endauth
                 </div>
-            
+
                     </ul>
                 </div>
             </div>
@@ -54,15 +54,15 @@
     <div class="row justify-content-center">
         <div class="col-md-5">
         <br><br>
-                
+
             <div class="card">
-                
+
                 <div class="card-header text-center">{{ __('LOGIN') }}</div>
 
                 <div class="card-body">
                     <br>
-                    
-                    
+
+
 
                 <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex text-center">
@@ -72,8 +72,8 @@
                 <br>
                 <br>
                     <form method="POST" action="{{ route('login') }}">
-                    
-                    {{ csrf_field() }}
+
+                        @csrf
                     @if (Route::has('login'))
 
                         <div class="row mb-3">
@@ -107,12 +107,12 @@
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
-             
+
                                 </div>
-                                
+
 
                             </div>
-                            
+
 
                         </div>
 
