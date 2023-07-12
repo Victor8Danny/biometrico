@@ -55,10 +55,10 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
         //
-        $usuario = User::where('cedpersona', '0604780494')->first();
+        $usuario = User::where('cedpersona', $request->cedpersona)->first();
         //$usuario = DB::table('tpersona')->where('tpersona.cedpersona', '=', $request->cedpersona)->first();
 
-        if($usuario != null){
+        if(!is_null($usuario)){
                 switch($usuario->tippersona){
 
                     case('Estudiante'):
