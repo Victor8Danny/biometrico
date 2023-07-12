@@ -48,7 +48,7 @@
 <li class="" )>
     @endsection
 
-    
+
 
   @section('content')
 
@@ -65,7 +65,7 @@
       <form role="form" method="post" action="{{route('UpdateDocente', $inf->codpersona)}}" enctype="multipart/form-data">
         <div class="col-md-6">
           <div class="box box-primary">
-            {{ csrf_field() }}
+            @csrf
             <div class="box-body">
               <div class="form-group">
                 <label>Cédula</label>
