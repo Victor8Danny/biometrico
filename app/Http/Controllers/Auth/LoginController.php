@@ -56,10 +56,7 @@ class LoginController extends Controller
         ]);
         //
         //$usuario = User::where('cedpersona', $request->cedpersona)->first();
-        DB::table('tpersona')->where('tpersona.cedpersona', '=', $request->cedpersona)->first();
-
-        $a = 0;
-        $a = $usuario->cedpersona;
+        $usuario = DB::table('tpersona')->where('tpersona.cedpersona', '=', $request->cedpersona)->first();
 
         if($usuario != null){
                 switch($usuario->tippersona){
