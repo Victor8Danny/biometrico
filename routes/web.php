@@ -131,7 +131,7 @@ Route::get('/docente', [DocenteController::class, 'index'])->name('homeDocente')
 Route::get('/docente/informacion',[DocenteController::class, 'DocenteInformacion'])->name('DocenteInformacion');
 Route::post('/docente/informacion/{codpersona}',[DocenteController::class, 'UpdateDocente'])->name('UpdateDocente');
 ///////////////////////////////////////////////////////////////tomar lista docente////////////////////////////////////////////////////////////////////
-Route::get('docente/tomarLista', [DocenteController::class, 'TomarListaDocente'])->name('TomarListaDocente');
+Route::get('/docente/tomarLista', [DocenteController::class, 'TomarListaDocente'])->name('TomarListaDocente');
 Route::post('/cambiar_asistencia', [DocenteController::class, 'postActualizarAsistenciaTomarLista'])->name('postActualizarAsistenciaTomarLista');
 ///////////////////////////////////////////////////////////////Asistencia fecha deterninada////////////////////////////////////////////////////////////////////
 Route::get('docente/asistencia_fecha', [DocenteController::class, 'AsistenciaFechaDeterminada'])->name('AsistenciaFechaDeterminada');
