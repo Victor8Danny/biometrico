@@ -16,11 +16,13 @@
     <!-- Scripts -->
    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body style="background-color:#278747;">
+<body style="background-color:#FFFFFF;">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#278747;">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#FFFFFF;">
             <div class="container" >
-
+                <a class="navbar-brand text-success" href="{{ url('/') }}" style="background-color:#FFFFFF;">
+                Sistema de control de asistencias
+                </a>
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,15 +49,15 @@
             </div>
         </nav>
 
-        <main class="py-1" style="background-color:#278747;">
+        <main class="py-1" style="background-color:#FFFFFF;">
         <div class="container">
-    <div class="row justify-content-center">
+    <div class=" justify-content-center">
         <div class="col-md-5">
         <br><br>
 
             <div class="card">
 
-                <div class="card-header text-center text-light">Sistema de control de asistencias</div>
+
 
                 <div class="card-body">
                     <br>
