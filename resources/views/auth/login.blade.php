@@ -59,12 +59,12 @@
 
 
 
-                <div class="card-body border-light">
+                <div class="card-body border-success">
                     <br>
 
 
 
-                <div class=" border-light">
+                <div class=" border-success">
                 <div class="flex text-center">
                     <img src="../images/cLogoS.png" alt="">
                     </div>
