@@ -48,18 +48,18 @@
 <li class="" )>
     @endsection
 
-    
-    
+
+
     @section('content')
     <h2>Horarios de Clases</h2>
     <div class="box box-primary">
         <div class="box-body">
-            {{ csrf_field() }}
+            @csrf
 
             <div class="col-xs-4">
                 <div class="form-group">
                 <br>
-                    
+
                     <label>Periodo:</label>
                     <select class="form-control select2" style="width: 100%;" name="periodos" id="periodos">
                         <option value="">Escoja el periodo</option>
@@ -130,14 +130,14 @@
                         "bDestroy": true
                     });
 
-                   
+
                 });
             });
         });
     </script>
 
     <script>
-        
+
 
         function ver() {
             $('#contenedor_carga_ajax').show();
