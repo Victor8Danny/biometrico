@@ -64,7 +64,7 @@
 
 
 
-                <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                <div class="max-w-7xl mx-auto p-6 lg:p-8 border-light">
                 <div class="flex text-center">
                     <img src="../images/cLogoS.png" alt="">
                     </div>
