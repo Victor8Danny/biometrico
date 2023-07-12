@@ -33,7 +33,8 @@ Route::get('error', function(){
     abort(500);
 });
 Route::get('/user', [HomeController::class, 'getUser'])->name('user');
-Route::get('/', [HomeController::class, 'index'])->name('home');
+//Route::get('/', [HomeController::class, 'index'])->name('home');
+Auth::routes(); Route::get('/', [HomeController::class, 'index'])->name('home');
 //Route::resource('/estudiante', EstudianteController::class);
 
 
