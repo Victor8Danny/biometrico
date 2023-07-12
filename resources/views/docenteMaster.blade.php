@@ -155,7 +155,7 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image"> -->
+
                 <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{!!auth()->user()->apepersona.' '.auth()->user()->nompersona!!}</span>
@@ -163,7 +163,7 @@
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image"> -->
+
                   <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="img-circle" alt="User Image">
                   <p>
                     {!! auth()->user()->abreviatura.' '.auth()->user()->apepersona.' '.auth()->user()->nompersona !!}
@@ -200,8 +200,8 @@
         <br>
         <div class="user-panel">
           <div class="pull-left image">
-            <!-- <img src="/storage/app/public/{{Auth()->user()->huella}}" class="img-circle" alt="User Image">-->
-            <img src="../storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="img-circle" alt="User Image" style="height: 50px; width: 50px;">
+
+            <img src="/storage/{{Auth()->user()->datosFoto()->nomfoto}}" class="img-circle" alt="User Image" style="height: 50px; width: 50px;">
           </div>
           <div class="pull-left info">
             <p>{{ auth()->user()->apepersona }}<br> {{auth()->user()->nompersona}}</p>
