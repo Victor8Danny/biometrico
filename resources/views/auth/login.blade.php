@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sistema de control de asistensias</title>
+    <title></title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -49,7 +49,7 @@
             </div>
         </nav>
 
-        <main class="py-1">
+        <main class="py-1" style="background-color:#278747;">
         <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
