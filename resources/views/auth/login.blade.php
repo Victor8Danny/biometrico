@@ -20,9 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#278747;">
             <div class="container" >
-                <a class="navbar-brand text-light" href="{{ url('/') }}" style="background-color:#278747;">
-                Sistema de control de asistencias
-                </a>
+
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,7 +55,7 @@
 
             <div class="card">
 
-                <div class="card-header text-center">{{ __('LOGIN') }}</div>
+                <div class="card-header text-center text-light">Sistema de control de asistencias</div>
 
                 <div class="card-body">
                     <br>
