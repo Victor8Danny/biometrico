@@ -533,7 +533,7 @@
     'username' => 'email',
     'email' => 'email',
     'views' => true,
-    'home' => '/home',
+    'home' => '/',
     'prefix' => '',
     'domain' => NULL,
     'limiters' => 
