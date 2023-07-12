@@ -55,7 +55,7 @@
         <div class="col-md-5">
         <br><br>
 
-            <div class="card border-light">
+            <div class="card border-white">
 
 
 
