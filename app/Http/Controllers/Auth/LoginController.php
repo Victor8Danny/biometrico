@@ -55,7 +55,8 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
         //
-        $usuario = User::where('cedpersona', $request->cedpersona)->first();
+        //$usuario = User::where('cedpersona', $request->cedpersona)->first();
+        DB::table('tpersona')->where('tpersona.cedpersona', '=', $request->cedpersona)->first();
 
         $a = 0;
         $a = $usuario->cedpersona;
@@ -81,28 +82,9 @@ class LoginController extends Controller
                 }
 
         }else{
-            switch($usuario->tippersona){
-
-                case('Estudiante'):
-                    if($usuario->clave === $request->password){
-                        Auth::login($usuario);
-                        $request->session()->regenerate();
-                        return redirect('/')->withSuccess('Signed in');
-                    }
-                break;
-                case ('Docente'):
-                    if($usuario->clave === $request->password){
-                        Auth::login($usuario);
-                        $request->session()->regenerate();
-                        return redirect('/')->withSuccess('Signed in');
-                    }
-                break;
-
-            }
+            return redirect("login")->withSuccess('Login details are not valid');
         }
 
-
-        //return redirect("login")->withSuccess('Login details are not valid');
     }
 
 
