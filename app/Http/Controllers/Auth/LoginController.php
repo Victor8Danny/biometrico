@@ -58,7 +58,9 @@ class LoginController extends Controller
         $usuario = User::where('cedpersona', $request->cedpersona)->first();
         //$usuario = DB::table('tpersona')->where('tpersona.cedpersona', '=', $request->cedpersona)->first();
 
-        if(!is_null($usuario)){
+        //if(!is_null($usuario)){
+
+            if(count($usuario) < 1){
                 switch($usuario->tippersona){
 
                     case('Estudiante'):
