@@ -29,11 +29,11 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('errorGeneral', 'HomeController@errorGeneral')->name('errorGeneral');
-Route::get('error', function(){ 
+Route::get('error', function(){
     abort(500);
 });
 Route::get('/user', [HomeController::class, 'getUser'])->name('user');
-Auth::routes(); Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 //Route::resource('/estudiante', EstudianteController::class);
 
 
