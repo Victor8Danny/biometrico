@@ -27,7 +27,7 @@ use App\Http\Controllers\SupervisorController;
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('errorGeneral', 'HomeController@errorGeneral')->name('errorGeneral');
 Route::get('error', function(){
     abort(500);
